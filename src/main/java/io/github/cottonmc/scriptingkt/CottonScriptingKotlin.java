@@ -32,7 +32,7 @@ public class CottonScriptingKotlin implements ModInitializer {
 				stdlib.getParentFile().mkdirs();
 				stdlib.createNewFile();
 				Optional<ModContainer> containerOpt = FabricLoader.getInstance().getModContainer("fabric-language-kotlin");
-				if (containerOpt.isPresent()) {
+				if (containerOpt.isPresent()) { //will always exist since it's required
 					ModContainer container = containerOpt.get();
 					Path stdLibPath = container.getPath("META-INF/jars/kotlin-stdlib-1.3.61.jar");
 					FileOutputStream out = new FileOutputStream(stdlib, false);
@@ -49,7 +49,7 @@ public class CottonScriptingKotlin implements ModInitializer {
 				config.getParentFile().mkdirs();
 				config.createNewFile();
 				Optional<ModContainer> containerOpt = FabricLoader.getInstance().getModContainer(MODID);
-				if (containerOpt.isPresent()) {
+				if (containerOpt.isPresent()) { //will always exist since it's us
 					ModContainer container = containerOpt.get();
 					Path configPath = container.getPath("compiler.xml");
 					FileOutputStream out = new FileOutputStream(config, false);
