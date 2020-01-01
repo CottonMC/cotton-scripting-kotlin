@@ -61,6 +61,14 @@ public class CottonScriptingKotlin implements ModInitializer {
 			}
 		}
 		try {
+			/* TODO:
+			This won't work outside of the Cotton Scripting Kotlin dev environment.
+			Kotlin's compiler uses a separate classpath, which means that it can't access code it needs.
+			It also can't access p much any other code, so there goes the whole point of this.
+			To fix it, I'd need to inject my own `KotlinJsr223JvmScriptEngineFactoryBase`,
+			and use a resources file to override the original.
+			Whacking at this for six hours just burnt me out on modding agin, so someone else can fix it if they want.
+			 */
 			engine.eval("println(\"[Cotton Scripting Kotlin|JSR223] Kotlin JSR223 is working!\")");
 		} catch (Exception e) {
 			throw new RuntimeException(e);
