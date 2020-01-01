@@ -8,7 +8,7 @@
   "description": "JSR223 support for Kotlin scripting",
   "license": "MIT",
   "contact": {
-    "sources": "https://github.com/CottonMC/FabricStarter"
+    "sources": "https://github.com/CottonMC/cotton-scripting-kotlin"
   },
   "environment": "*",
   "entrypoints": {

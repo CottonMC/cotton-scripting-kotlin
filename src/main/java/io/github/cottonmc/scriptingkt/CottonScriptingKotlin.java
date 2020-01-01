@@ -5,7 +5,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jetbrains.kotlin.cli.common.CLIConfigurationKeys;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -43,6 +42,7 @@ public class CottonScriptingKotlin implements ModInitializer {
 				logger.error("[Cotton Scripting Kotlin] Couldn't copy Kotlin standard lib! JSR-223 will not work!");
 			}
 		}
+		System.setProperty("kotlin.java.stdlib.jar", stdlib.getAbsolutePath());
 		File config = new File("compiler/cli/cli-common/resources/META-INF/extensions/compiler.xml");
 		if (!config.exists()) {
 			try {
@@ -60,7 +60,6 @@ public class CottonScriptingKotlin implements ModInitializer {
 				logger.error("[Cotton Scripting Kotlin] Couldn't copy compiler config! JSR-223 will not work!");
 			}
 		}
-		System.setProperty("kotlin.java.stdlib.jar", stdlib.getAbsolutePath());
 		try {
 			engine.eval("println(\"[Cotton Scripting Kotlin|JSR223] Kotlin JSR223 is working!\")");
 		} catch (Exception e) {
