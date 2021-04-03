@@ -19,5 +19,10 @@
   "depends": {
     "fabricloader": ">=0.4.0",
     "fabric-language-kotlin": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "library" ]
+    }
   }
 }
