@@ -21,6 +21,8 @@
     "fabric-language-kotlin": "*"
   },
   "custom": {
-    "modmenu:api": true
+    "modmenu": {
+      "badges": [ "library" ]
+    }
   }
 }
